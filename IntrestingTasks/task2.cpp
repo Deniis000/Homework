@@ -1,9 +1,9 @@
 #include <iostream>
 
-void pascal_triangle(int n) {
-	for (int i = 0; i < n; i++) {
-		int num = 1;
-		for (int j = 0; j <= n; j++) {
+void pascal_triangle(unsigned int n) {
+	for (unsigned int i = 0; i < n; i++) {
+		unsigned int num = 1;
+		for (unsigned int j = 0; j <= n; j++) {
 			std::cout << num << " ";
 			num = num * (i - j) / (j + 1);
 		}
@@ -12,7 +12,7 @@ void pascal_triangle(int n) {
 }
 
 int main() {
-	int n;
+	unsigned int n;
 	std::cout << "Insert n: ";
 	std::cin >> n;
 	std::cout << "\nPascal triangle: " << std::endl;

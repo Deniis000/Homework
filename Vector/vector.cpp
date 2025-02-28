@@ -33,6 +33,7 @@ int main() {
 	
 	std::cout << "Index of 3: " << v.vector::index(3) << std::endl;
 	std::cout << "Index of 7: " << v.vector::index(7) << std::endl;
-	
+
+	delete[] int;
 	return 0;
 }

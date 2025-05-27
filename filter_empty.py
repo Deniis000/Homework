@@ -1,4 +1,4 @@
-input sys
+import sys
 
 def filter():
     while(1):

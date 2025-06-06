@@ -15,7 +15,7 @@ try:
 
     with open(filename, 'w', encoding='utf-8') as f:
         json.dump(data, f, ensure_ascii=False, indent=4)
-    print(f"Дані збережено у файл '{filename}'")
+    print(f"Data saved to file '{filename}'")
 
     with open(filename, 'r', encoding='utf-8') as f:
         saved_data = json.load(f)
@@ -31,20 +31,20 @@ try:
 
     if usd_rate:
         print("\nКурс USD → UAH:")
-        print(f"Купівля: {usd_rate.get('rateBuy', 'н/д')}")
-        print(f"Продаж:  {usd_rate.get('rateSell', 'н/д')}")
+        print(f"Purchase: {usd_rate.get('rateBuy', 'н/д')}")
+        print(f"Selling:  {usd_rate.get('rateSell', 'н/д')}")
 
     if eur_rate:
-        print("\nКурс EUR → UAH:")
-        print(f"Купівля: {eur_rate.get('rateBuy', 'н/д')}")
-        print(f"Продаж:  {eur_rate.get('rateSell', 'н/д')}")
+        print("\nRate EUR → UAH:")
+        print(f"Purchase: {eur_rate.get('rateBuy', 'н/д')}")
+        print(f"Selling:  {eur_rate.get('rateSell', 'н/д')}")
 
     if not usd_rate and not eur_rate:
-        print("Не знайдено курсів для USD та EUR.")
+        print("No rates found for USD and EUR")
 
 except requests.exceptions.RequestException as e:
-    print(f"Помилка HTTP-запиту: {e}")
+    print(f"HTTP request error: {e}")
 except (ValueError, json.JSONDecodeError):
-    print("Помилка обробки JSON.")
+    print("JSON processing error")
 except IOError as e:
-    print(f"Помилка при роботі з файлом: {e}")
+    print(f"Error while working with file: {e}")
